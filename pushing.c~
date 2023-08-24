@@ -1,0 +1,39 @@
+#include "monty.h"
+/**
+ * pushing - push and print all
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+
+void push(stack_t **head, int value)
+{
+
+	stack_t *new_node;
+
+	new_place = (stack_t *)malloc(sizeof(stack_t));
+
+	if (new_node == NULL)
+	{
+		printf("Memory error\n");
+		exit(EXIT_FAILURE);
+	}
+	new_place->n = value;
+	new_place->next = *top;
+	new_place->prev = NULL;
+
+	if (*head != NULL)
+	{
+		(*head)->prev = new_place;
+	}
+	*head = new_place;
+}
+
+void pall(stack_t *head)
+{
+	while (top != NULL)
+	{
+		printf("%d\n", top->n);
+		top = top->next;
+	}
+}
