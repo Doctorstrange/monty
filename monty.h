@@ -46,7 +46,7 @@ typedef struct move_it
 {
 	FILE *file;
 	char *r_line;
-	int lifi;
+	int que;
 	char *arg;
 }  move_t;
 
@@ -61,5 +61,7 @@ void t_pall(stack_t **head, unsigned int line_no);
 void free_buffer(stack_t *head);
 
 int play(char *r_line, stack_t **stack, unsigned int line_no, FILE *file);
+
+void *add_dnodeint(stack_t **head, int n);
 
 #endif

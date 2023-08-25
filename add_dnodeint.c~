@@ -7,7 +7,7 @@
  *Return: address of the new element
  */
 
-void *add_dnodeint(stack_t **head, int n)
+void *add_dnodeint(stack_t **head, const int n)
 {
 	stack_t *temphead;
 	stack_t *new = malloc(sizeof(stack_t));

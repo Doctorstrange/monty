@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	char *r_line;
 	FILE *file;
 	size_t size = 0;
-	ssize_t file_read = 0;
+	ssize_t file_read = 1;
 	stack_t *stack = NULL;
 	unsigned int line_no = 0;
 

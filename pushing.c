@@ -7,37 +7,46 @@
 */
 
 void t_push(stack_t **head, unsigned int line_no)
+#include "monty.h"
 {
+	int n, j = 0, flag = 0;
 
-	stack_t *new_place;
-
-	new_place = (stack_t *)malloc(sizeof(stack_t));
-
-	if (new_place == NULL)
+	if (move.arg)
 	{
-		printf("Memory error\n");
-		exit(EXIT_FAILURE);
-	}
-	new_place->n = line_no;
-	new_place->next = *head;
-	new_place->prev = NULL;
-
-	if (*head != NULL)
-	{
-		(*head)->prev = new_place;
-	}
-	*head = new_place;
+		if (move.arg[0] == '-')
+			j++;
+		for (; move.arg[j] != '\0'; j++)
+		{
+			if (move.arg[j] > 57 || move.arg[j] < 48)
+				flag = 1; }
+		if (flag == 1)
+		{ fprintf(stderr, "L%d: usage: push integer\n", line_no);
+			fclose(move.file);
+			free(move.r_line);
+			free_buffer(*head);
+			exit(EXIT_FAILURE); }}
+	else
+	{ fprintf(stderr, "L%d: usage: push integer\n", line_no);
+		fclose(move.file);
+		free(move.r_line);
+		free_buffer(*head);
+		exit(EXIT_FAILURE); }
+	n = atoi(move.arg);
+	if (move.que == 0)
+		add_dnodeint(head, n);
 }
 
 void t_pall(stack_t **head, unsigned int line_no)
 {
-	stack_t *top;
+	stack_t *h;
 	(void)line_no;
-	top = *head;
 
-	while (top != NULL)
+	h = *head;
+	if (h == NULL)
+		return;
+	while (h)
 	{
-		printf("%d\n", top->n);
-		top = top->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }
