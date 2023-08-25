@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "monty.h"
+move_t move = {NULL, NULL, 0, NULL};
 /**
 * main - monty code interpreter
 * @argc: number of arguments
