@@ -15,6 +15,7 @@ int play(char *r_line, stack_t **stack, unsigned int line_no, FILE *file)
 				{"pint", t_pint},
 				{"pop", t_pop},
 				{"swap", t_swap},
+				{"add", t_add},
 				{NULL, NULL}
 				};
 
