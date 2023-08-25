@@ -27,5 +27,5 @@ void t_swap(stack_t **head, unsigned int line_no)
 	x = *head;
 	temp = x->n;
 	x->n = x->next->n;
-	h->next->n = temp;
+	x->next->n = temp;
 }
