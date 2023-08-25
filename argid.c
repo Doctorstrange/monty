@@ -12,6 +12,7 @@ int play(char *r_line, stack_t **stack, unsigned int line_no, FILE *file)
 	instruction_t argid[] = {
 				{"push", t_push},
 				{"pall", t_pall},
+				{"pint", t_pint},
 				{NULL, NULL}
 				};
 

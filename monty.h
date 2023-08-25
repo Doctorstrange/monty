@@ -64,4 +64,6 @@ int play(char *r_line, stack_t **stack, unsigned int line_no, FILE *file);
 
 void *add_dnodeint(stack_t **head, int n);
 
+void t_pint(stack_t **head, unsigned int counter);
+
 #endif
