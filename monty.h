@@ -72,4 +72,6 @@ void t_swap(stack_t **head, unsigned int line_no);
 
 void t_add(stack_t **head, unsigned int line_no);
 
+void t_nop(stack_t **head, unsigned int line_no);
+
 #endif
